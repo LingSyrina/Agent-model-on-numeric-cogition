@@ -2,9 +2,6 @@
 import math
 import matplotlib.pyplot as plt
 
-# successful trial patameters
-# circle initial position (0,10), agent positio (3,0), circle radius = 1, speed = 5, timestep = i/50, distance between circles = 5
-
 # Global parameters
 test = 3
 chase_sp = 150
