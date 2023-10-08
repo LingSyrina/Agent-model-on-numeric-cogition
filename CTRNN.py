@@ -1,22 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-# In[6]:
-
-
 def sigmoid(x):
     return 1/(1+np.exp(-x))
-
-
-# In[3]:
-
 
 class CTRNN():
     '''CTRNN has a number of SENSOR, MOTOR, INTER neurons, 
@@ -87,26 +73,20 @@ class CTRNN():
             #  update its output
             self.outputs[i] = sigmoid(self.inputs[i] + self.B[i])
 
+# sample CTRNN: oscillator
+# dt = 0.1
+# time = np.arange(0,50,dt)
+# o1 = np.zeros((len(time)))
+# o2 = np.zeros((len(time)))
+# i = 0
 
-# In[114]:
-
-
-# test CTRNN
-
-dt = 0.1
-time = np.arange(0,50,dt)
-o1 = np.zeros((len(time)))
-o2 = np.zeros((len(time)))
-i = 0
-
-a = CTRNN(2,[[1,1],[1,1]])
-a.receive_parameters([4.5, 1, -1, 4.5,1,1,-2.75,-1.75,0,0],1,[1,0],1,1)
-for t in time:
-    a.update(dt)
-    o1[i] = a.outputs[0]
-    o2[i] = a.outputs[1]
-    i +=1
+# a = CTRNN(2,[[1,1],[1,1]])
+# a.receive_parameters([4.5, 1, -1, 4.5,1,1,-2.75,-1.75,0,0],1,[1,0],1,1)
+# for t in time:
+#     a.update(dt)
+#     o1[i] = a.outputs[0]
+#     o2[i] = a.outputs[1]
+#     i +=1
     
-plt.plot(time,o1)
-plt.plot(time,o2)
-
+# plt.plot(time,o1)
+# plt.plot(time,o2)
