@@ -1,15 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
-
-
-# In[1]:
-
 
 class GA():
     def __init__(self,pop,genesize):
@@ -68,22 +61,19 @@ class GA():
         plt.show()
         return best_p,best_w
 
+# Sample run
 
-# In[3]:
+# def fitness(genotype):
+#     return np.mean(genotype)
 
+# # parameters    
+# perf = fitness
+# pop = 10
+# genesize = 2
+# grt = 6
+# REC = 0.3
+# MUT = 0.1
 
-# Test GA
-def fitness(genotype):
-    return np.mean(genotype)
-
-# parameters    
-perf = fitness
-pop = 10
-genesize = 2
-grt = 6
-REC = 0.3
-MUT = 0.1
-
-run = GA(pop,genesize)
-run.run(perf,grt,REC,MUT)  
+# run = GA(pop,genesize)
+# run.run(perf,grt,REC,MUT)   
 
