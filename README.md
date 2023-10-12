@@ -12,7 +12,7 @@
 4. Evaluation: performance score
 
 ## Task breakdown
-1. Numerosity attention model: catch stimuli with numerosity one/ four
+1. Numerosity attention model: catch stimuli with numerosity one/ four (week 8-?)
 2. Numerosity attention model: catch stimuli with numerosity two/ three
 3. Habituation model: Catch stimuli with the same numerosity (1 stimuli group per phase)
 4. Habituation model: Catch stimuli with the familiar numerosity (2 + 1 stimuli group)
