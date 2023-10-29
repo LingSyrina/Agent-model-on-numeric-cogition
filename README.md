@@ -13,7 +13,7 @@
 
 ## Task breakdown
 1. Numerosity attention model: catch stimuli with numerosity one/ four (week 8-?)
-   catching four only:
+   ### catching four only:
    ![image](https://github.com/LingSyrina/Agent-model-on-numeric-cogition/assets/91287479/883ce17a-dccc-42c6-a59e-5da468b9c161)
    ![image](https://github.com/LingSyrina/Agent-model-on-numeric-cogition/assets/91287479/59c255ef-0a4f-4a1d-98f6-5d29f03ea6e9)
    ![image](https://github.com/LingSyrina/Agent-model-on-numeric-cogition/assets/91287479/3b45d706-3507-4b42-8d7a-d657bb4ef6af)
