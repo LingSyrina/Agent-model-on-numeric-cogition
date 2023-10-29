@@ -32,6 +32,44 @@ Irange = 10
 size = 4
 connections = [[0,0,0,0], [1,1,1,1], [1,1,1,1], [0,1,1,0]]
 dt = 1 / 20
+
+# Task 1: Numerosity attention model: catch stimuli with numerosity four  
+def attention(genotype): 
+    
+    # Initialisation
+    external_input = np.zeros(size)
+    group = 1
+    performance = 0
+    
+    # averaging through a group of agents
+    for n in range(group):
+        
+        # Setting CTRNN agent and stimuli
+        model = CTRNN.CTRNN(size, connections)
+        model.receive_parameters(genotype, Wrange, Trange, Brange, Irange)
+        agent = asc.Agent(*ini_agent)
+        
+        test_numerosity = random.randint(1, 3) if random.randint(0, 1) == 0 else 4
+        sense = asc.Stimuli(ini_pos, radius, [test_numerosity], distance, space, speed)
+        
+        # catching stage              
+        for i in range (300):
+            external_input[0] = 0
+            for circle in sense.stimuli:
+                circle.fall(dt)
+                external_input[0] += agent.sense(circle)  
+            model.update_ext(dt, external_input)          
+            agent.forward, agent.backward = model.outputs[3], 0.3
+            agent.move()
+         
+        # evaluate performance
+        if test_numerosity == 4:
+            performance += (3 - abs(agent.x)) * 10/3
+        else:        
+            performance += agent.x * 10/3
+    performance /= group
+        
+    return performance 
 ```  
 
 3. Numerosity attention model: catch stimuli with numerosity two/ three
